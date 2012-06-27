@@ -1,0 +1,28 @@
+<h1>Users Listing</h1>
+<p id="notice"><%= notice %></p>
+<table>
+  <tr>
+    <th>Username</th>
+    <th>Email</th>
+    <th>Role</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.username %></td>
+    <td><%= user.email %></td>
+    <td><%= (user.is_admin == 1 ? 'Admin' : (user.is_admin == 2 ? 'Doctor' : 'Patient')) %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<% if current_user %>
+      <% if current_user.is_admin == 1 %>
+         <%= link_to 'New User', new_user_path %>
+      <% end %>
+<% end %>

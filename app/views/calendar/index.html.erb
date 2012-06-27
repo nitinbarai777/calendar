@@ -1,0 +1,6 @@
+<% if current_user.is_admin !=2 %>
+   <%= link_to "new event", new_event_path %>
+<% end %>
+
+<div id='calendar'></div>
+

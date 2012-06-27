@@ -1,0 +1,25 @@
+<header>
+   <div class="logo">
+    <%= link_to(image_tag("login-logo.jpg", :alt => "Sample App", :class => "logo-img"), root_path) %>
+    </div>
+      <ul id="nav">
+        <li><%= link_to "Home", root_path %></li>
+        <% if current_user %>
+            <% if current_user.is_admin == 1 %>
+               <li><%= link_to "Users", users_path %></li>
+               <li><%= link_to "Events", events_path %></li>
+			   <li><%= link_to "Pages", pages_path %></li>
+			   <li><%= link_to "Menus", mainmenus_path %></li>
+            <% else %>
+               <li><%= link_to "Events", events_path %></li>
+			   <li><%= link_to "Pages", all_pages_path %></li>
+            <% end %>
+            <li><%= link_to "Edit Profile", edit_user_path(current_user.id)%></li>
+            <li><%= link_to "Logout", :logout%></li>
+         <% else %>
+         <li><%= link_to "Register", new_user_path%></li>
+         <li><%= link_to "Login", :login %></li>
+         <% end %>
+      </ul>
+      <div class="clear"></div>
+</header>

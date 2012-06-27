@@ -1,0 +1,20 @@
+<br /><br />
+		<ul id="nav_sub">
+            <% menus.each do |menu| %>
+               <li><span>
+                  <%= menu.name %></span>
+                  <ul>
+                  <% menu.pages.each do |pg| %>
+                     <li><%= link_to pg.title, pg %></li>
+                  <% end %>
+                  </ul>
+                  <div class="clear"></div>
+               </li>
+            <% end %>
+		</ul>
+
+<br /><br />
+
+<p style="width: 750px; margin-left: 0px;">
+  <%= @page.content.html_safe %>
+</p>

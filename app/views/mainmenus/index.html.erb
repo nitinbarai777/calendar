@@ -1,0 +1,25 @@
+<h1>Listing mainmenus</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Title</th>
+    <th>Show</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+
+<% @mainmenus.each do |mainmenu| %>
+  <tr>
+    <td><%= mainmenu.name %></td>
+    <td><%= mainmenu.title %></td>
+    <td><%= link_to 'Show', mainmenu %></td>
+    <td><%= link_to 'Edit', edit_mainmenu_path(mainmenu) %></td>
+    <td><%= link_to 'Destroy', mainmenu, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Mainmenu', new_mainmenu_path %>

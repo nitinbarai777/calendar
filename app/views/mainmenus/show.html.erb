@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @mainmenu.name %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @mainmenu.title %>
+</p>
+
+<%= link_to 'Edit', edit_mainmenu_path(@mainmenu) %> |
+<%= link_to 'Back', mainmenus_path %>
