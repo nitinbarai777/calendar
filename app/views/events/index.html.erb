@@ -19,8 +19,8 @@
 <% @events_list.each do |event| %>
   <tr>
     <td><%= event.title %></td>
-    <td><%= event.starts_at %></td>
-    <td><%= event.ends_at %></td>
+    <td><%= date_formate(event.starts_at) %></td>
+    <td><%= date_formate(event.ends_at) %></td>
     <td><%= event.description %></td>
     <% if current_user.is_admin == 2 %>
       <td><%= event.get_patient_name(event.user_id) %></td>

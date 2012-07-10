@@ -9,4 +9,8 @@ module ApplicationHelper
       @menuurl = Page.find(:first, :conditions => ['menu_id =?', id])
    end
    
+   def date_formate(date)
+		date.strftime("%d.%-m.%Y")
+	end
+   
 end
